@@ -2,6 +2,7 @@ package com.example.andynovelapi.internetApi
 
 import com.example.andyutils.designPatternUtils.SingletonHolder
 import com.example.gituserapi.beans.NetUserBean
+import com.example.gituserapi.beans.NetUserDetailBean
 import io.reactivex.Observable
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -24,5 +25,9 @@ class UserApiMethods private constructor(appName: String){
 
     fun getUserData(observer: Observer<List<NetUserBean>>, since: Int){
         apiSubscribe(mApiService!!.getUserInfo(since, perPage), observer)
+    }
+    
+    fun getUserDataByLogin(observer: Observer<NetUserDetailBean>, login: String){
+        apiSubscribe(mApiService!!.getUserInfoByLogin(login), observer)
     }
 }
