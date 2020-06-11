@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="userBean"
+            type="com.andyyeh.examE.mainActivity.model.UserBean" />
+    </data>
+
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -13,14 +19,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <androidx.appcompat.widget.AppCompatImageButton
+            <ImageView
                 android:id="@+id/vUserImage"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="10dp"
                 android:layout_gravity="center_vertical"
                 android:foreground="@drawable/round_img"
-                android:src="@mipmap/ic_launcher"
+                imgUrl="@{userBean.imgUrl}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,12 +40,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="dddddd" />
+                    android:text="@{userBean.userName}"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
+                    android:visibility="@{userBean.isStuff? View.VISIBLE : View.GONE}"
                     android:text="STAFF"
                     android:textColor="@color/white"
                     android:padding="5dp"
@@ -47,5 +54,4 @@
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
-</RelativeLayout>
+</layout>
