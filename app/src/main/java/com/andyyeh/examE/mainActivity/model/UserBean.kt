@@ -6,6 +6,7 @@ import com.bumptech.glide.Glide
 import javax.inject.Inject
 
 
-data class UserBean(var imgUrl: String,
+data class UserBean(var id: Int,
+                    var imgUrl: String,
                     var userName: String,
                     var isStuff: Boolean)

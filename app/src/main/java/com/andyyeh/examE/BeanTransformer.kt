@@ -14,6 +14,7 @@ class BeanTransformer private constructor(){
         val userBeans = ArrayList<UserBean>()
         for (netUserBean in netUserBeans){
             val userBean = UserBean(
+                netUserBean.id,
                 netUserBean.avatar_url,
                 netUserBean.login,
                 netUserBean.site_admin)
