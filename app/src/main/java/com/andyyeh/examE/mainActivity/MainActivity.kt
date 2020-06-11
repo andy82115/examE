@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.transition.Slide
 import android.util.Log
 import android.view.Gravity
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.andyyeh.examE.R
@@ -52,7 +53,7 @@ class MainActivity : BaseActivity() {
                 super.onScrollStateChanged(recyclerView, newState)
                 if (newState == RecyclerView.SCROLL_STATE_IDLE
                     && lastVisibleItem!! + 1 == mAdapter.itemCount){
-
+                    this@MainActivity.requestData()
                 }
             }
         })
@@ -64,8 +65,12 @@ class MainActivity : BaseActivity() {
      * the it[1] present the size
      * **/
     private fun requestData(){
-        mViewModel.requestUserData(Consumer {
-            mAdapter.notifyItemRangeInserted(it[0], it[1])
-        })
+        mViewModel.requestUserData(
+            Consumer {
+                mAdapter.notifyItemRangeInserted(it[0], it[1])
+            },
+            Action {
+                Toast.makeText(this@MainActivity, "size reach 100", Toast.LENGTH_LONG).show()
+            })
     }
 }

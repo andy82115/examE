@@ -16,13 +16,22 @@ class MainActivityViewModel(repository: MainActivityRepository, userModel: UserM
     private val mRepository = repository
     private val mUserModel = userModel
 
-    //FIXME: since & page should be dynamic
     /**
      * @param consumer IntArray[0] present position start, InArray[1] present the size
      * **/
-    fun requestUserData(consumer: Consumer<Array<Int>>){
+    fun requestUserData(consumer: Consumer<Array<Int>>, limitAction: Action){
+        var since = 0
+        val size = mUserModel.datas.size
+        if (size != 0) {
+            since = mUserModel.datas[size - 1].id
+        }
 
-        mRepository.getDataFromInternet(0, Consumer {
+        if (size >= 100) {
+            Completable.fromAction(limitAction).subscribe()
+            return
+        }
+
+        mRepository.getDataFromInternet(since, Consumer {
             mUserModel.addData(it)
             val notifyParameter = arrayOf(mUserModel.datas.size, it.size)
             Single.just(notifyParameter).subscribe(consumer)
