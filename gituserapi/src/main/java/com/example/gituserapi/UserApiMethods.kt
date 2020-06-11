@@ -22,7 +22,7 @@ class UserApiMethods private constructor(appName: String){
             .subscribe(observer)
     }
 
-    fun getUserData(observer: Observer<List<NetUserBean>>, since: Int, page: Int){
-        apiSubscribe(mApiService!!.getUserInfo(since, page, perPage), observer)
+    fun getUserData(observer: Observer<List<NetUserBean>>, since: Int){
+        apiSubscribe(mApiService!!.getUserInfo(since, perPage), observer)
     }
 }

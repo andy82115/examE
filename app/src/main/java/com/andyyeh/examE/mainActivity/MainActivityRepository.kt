@@ -19,7 +19,7 @@ class MainActivityRepository(basicInfo: BasicInfo) : MainContract.Repository{
     private val TAG = MainActivityRepository::class.java.simpleName
     private val mBasicInfo = basicInfo
 
-    override fun getDataFromInternet(since: Int, page: Int, consumer: Consumer<ArrayList<UserBean>>) {
+    override fun getDataFromInternet(since: Int, consumer: Consumer<ArrayList<UserBean>>) {
         val onNextListener = object : UserObserverListener.ObserverOnNextListener<List<NetUserBean>>{
             @SuppressLint("CheckResult")
             override fun onNext(t: List<NetUserBean>) {
@@ -34,6 +34,6 @@ class MainActivityRepository(basicInfo: BasicInfo) : MainContract.Repository{
         }
 
         val userObserver = UserObserver(onNextListener)
-        UserApiMethods.getInstance(mBasicInfo.appName).getUserData(userObserver, since, page)
+        UserApiMethods.getInstance(mBasicInfo.appName).getUserData(userObserver, since)
     }
 }

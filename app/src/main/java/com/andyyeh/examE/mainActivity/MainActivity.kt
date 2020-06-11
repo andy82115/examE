@@ -2,8 +2,10 @@ package com.andyyeh.examE.mainActivity
 
 import android.os.Bundle
 import android.transition.Slide
+import android.util.Log
 import android.view.Gravity
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.andyyeh.examE.R
 import com.andyyeh.examE.mainActivity.adapter.UserAdapter
 import com.andyyeh.examE.mvvmBase.BaseActivity
@@ -32,8 +34,28 @@ class MainActivity : BaseActivity() {
     }
 
     private fun setRecyclerView(){
+        detectRecyclerScroll()
         vUserInfoRV.layoutManager = LinearLayoutManager(this)
         vUserInfoRV.adapter = mAdapter
+    }
+
+    private fun detectRecyclerScroll(){
+        vUserInfoRV.addOnScrollListener(object : RecyclerView.OnScrollListener(){
+            var lastVisibleItem: Int? = 0
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                val layoutManager = recyclerView.layoutManager as LinearLayoutManager
+                lastVisibleItem = layoutManager.findLastVisibleItemPosition()
+            }
+
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                super.onScrollStateChanged(recyclerView, newState)
+                if (newState == RecyclerView.SCROLL_STATE_IDLE
+                    && lastVisibleItem!! + 1 == mAdapter.itemCount){
+
+                }
+            }
+        })
     }
 
     /**

@@ -21,7 +21,8 @@ class MainActivityViewModel(repository: MainActivityRepository, userModel: UserM
      * @param consumer IntArray[0] present position start, InArray[1] present the size
      * **/
     fun requestUserData(consumer: Consumer<Array<Int>>){
-        mRepository.getDataFromInternet(0, 1, Consumer {
+
+        mRepository.getDataFromInternet(0, Consumer {
             mUserModel.addData(it)
             val notifyParameter = arrayOf(mUserModel.datas.size, it.size)
             Single.just(notifyParameter).subscribe(consumer)
