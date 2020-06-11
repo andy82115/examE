@@ -1,6 +1,6 @@
-package com.andyyeh.template.mainActivity
+package com.andyyeh.examE.mainActivity
 
-import com.andyyeh.template.di.BasicInfo
+import com.andyyeh.examE.di.BasicInfo
 
 class MainActivityRepository(basicInfo: BasicInfo) {
 

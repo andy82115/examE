@@ -1,10 +1,10 @@
-package com.andyyeh.template.mainActivity
+package com.andyyeh.examE.mainActivity
 
 import android.os.Bundle
 import android.transition.Slide
 import android.view.Gravity
-import com.andyyeh.template.R
-import com.andyyeh.template.mvvmBase.BaseActivity
+import com.andyyeh.examE.R
+import com.andyyeh.examE.mvvmBase.BaseActivity
 import javax.inject.Inject
 
 class MainActivity : BaseActivity() {

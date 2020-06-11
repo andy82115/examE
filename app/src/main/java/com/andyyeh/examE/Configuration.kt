@@ -1,4 +1,4 @@
-package com.andyyeh.template
+package com.andyyeh.examE
 
 object Configuration{
     val DEBUG = true

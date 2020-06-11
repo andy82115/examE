@@ -1,4 +1,4 @@
-package com.andyyeh.template
+package com.andyyeh.examE
 
 /**
  * Example local unit test, which will execute on the development machine (host).

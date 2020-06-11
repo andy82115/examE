@@ -1,4 +1,4 @@
-package com.andyyeh.template.di
+package com.andyyeh.examE.di
 
 import android.app.Application
 import android.content.Context

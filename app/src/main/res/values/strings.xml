@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AndyKotlinTemplate</string>
+    <string name="app_name">AndyExamE</string>
     <string name="click_anywhere_to_start">Clicking anywhere to start</string>
     <string name="title_activity_gallery">galleryActivity</string>
 </resources>

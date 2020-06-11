@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.andyyeh.template">
+    package="com.andyyeh.examE">
 
     <uses-permission android:name="android.permission.INTERNET" /> <!-- to get the correct screen size, have to fit those type of screen -->
     <supports-screens
@@ -12,7 +12,7 @@
 
     <!--newtworkSecurityConfig is optional, it based on if this app need to utilize the http or not-->
     <application
-        android:name="com.andyyeh.template.ThisApplication"
+        android:name="com.andyyeh.examE.ThisApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -20,8 +20,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.andyyeh.template.mainActivity.MainActivity" />
-        <activity android:name="com.andyyeh.template.launchActivity.LaunchActivity">
+        <activity android:name="com.andyyeh.examE.mainActivity.MainActivity" />
+        <activity android:name="com.andyyeh.examE.launchActivity.LaunchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

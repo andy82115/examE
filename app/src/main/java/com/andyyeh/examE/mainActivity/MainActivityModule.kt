@@ -1,7 +1,7 @@
-package com.andyyeh.template.mainActivity
+package com.andyyeh.examE.mainActivity
 
-import com.andyyeh.template.di.ActivityScoped
-import com.andyyeh.template.di.BasicInfo
+import com.andyyeh.examE.di.ActivityScoped
+import com.andyyeh.examE.di.BasicInfo
 import dagger.Module
 import dagger.Provides
 

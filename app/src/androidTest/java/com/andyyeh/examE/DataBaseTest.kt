@@ -1,11 +1,11 @@
-package com.andyyeh.template
+package com.andyyeh.examE
 
 import android.util.Log
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.andyyeh.template.novelDataBase.BookTable.BookInfo
-import com.andyyeh.template.novelDataBase.BookTable.BookInfoDao
-import com.andyyeh.template.novelDataBase.NovelDataBase
+import com.andyyeh.examE.novelDataBase.BookTable.BookInfo
+import com.andyyeh.examE.novelDataBase.BookTable.BookInfoDao
+import com.andyyeh.examE.novelDataBase.NovelDataBase
 import io.reactivex.functions.Consumer
 import org.junit.Before
 import org.junit.Test

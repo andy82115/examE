@@ -1,9 +1,9 @@
-package com.andyyeh.template.di
+package com.andyyeh.examE.di
 
-import com.andyyeh.template.launchActivity.LaunchActivity
-import com.andyyeh.template.launchActivity.LaunchActivityModule
-import com.andyyeh.template.mainActivity.MainActivity
-import com.andyyeh.template.mainActivity.MainActivityModule
+import com.andyyeh.examE.launchActivity.LaunchActivity
+import com.andyyeh.examE.launchActivity.LaunchActivityModule
+import com.andyyeh.examE.mainActivity.MainActivity
+import com.andyyeh.examE.mainActivity.MainActivityModule
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

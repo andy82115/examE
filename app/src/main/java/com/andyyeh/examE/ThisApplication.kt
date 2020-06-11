@@ -1,7 +1,7 @@
-package com.andyyeh.template
+package com.andyyeh.examE
 
-import com.andyyeh.template.di.AppComponent
-import com.andyyeh.template.di.DaggerAppComponent
+import com.andyyeh.examE.di.AppComponent
+import com.andyyeh.examE.di.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
 

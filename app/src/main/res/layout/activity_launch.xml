@@ -7,7 +7,7 @@
     <data>
         <variable
             name="LaunchActivityViewModel"
-            type="com.andyyeh.template.launchActivity.LaunchActivityViewModel" />
+            type="com.andyyeh.examE.launchActivity.LaunchActivityViewModel" />
     </data>
 
     <RelativeLayout
