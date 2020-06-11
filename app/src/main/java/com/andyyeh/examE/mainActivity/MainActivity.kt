@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.andyyeh.examE.R
 import com.andyyeh.examE.mainActivity.adapter.UserAdapter
 import com.andyyeh.examE.mvvmBase.BaseActivity
+import io.reactivex.functions.Action
+import io.reactivex.functions.Consumer
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
@@ -34,7 +36,14 @@ class MainActivity : BaseActivity() {
         vUserInfoRV.adapter = mAdapter
     }
 
+    /**
+     * @see MainActivityViewModel.requestUserData
+     * the it[0] present the start position
+     * the it[1] present the size
+     * **/
     private fun requestData(){
-        mViewModel.requestUserData()
+        mViewModel.requestUserData(Consumer {
+            mAdapter.notifyItemRangeInserted(it[0], it[1])
+        })
     }
 }

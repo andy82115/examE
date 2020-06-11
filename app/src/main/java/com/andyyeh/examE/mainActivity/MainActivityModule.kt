@@ -16,8 +16,8 @@ class MainActivityModule{
     }
 
     @ActivityScoped
-    @Provides fun mainActivityViewModel(mainActivityRepository: MainActivityRepository) : MainActivityViewModel{
-        return MainActivityViewModel(mainActivityRepository)
+    @Provides fun mainActivityViewModel(mainActivityRepository: MainActivityRepository, userModel: UserModel) : MainActivityViewModel{
+        return MainActivityViewModel(mainActivityRepository, userModel)
     }
 
     @ActivityScoped
