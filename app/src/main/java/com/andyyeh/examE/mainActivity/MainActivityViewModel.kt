@@ -18,6 +18,7 @@ class MainActivityViewModel(repository: MainActivityRepository, userModel: UserM
 
     /**
      * @param consumer IntArray[0] present position start, InArray[1] present the size
+     * @param limitAction do the action if the user size reach the limit
      * **/
     fun requestUserData(consumer: Consumer<Array<Int>>, limitAction: Action){
         var since = 0

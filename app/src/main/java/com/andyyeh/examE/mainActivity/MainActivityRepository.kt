@@ -1,7 +1,6 @@
 package com.andyyeh.examE.mainActivity
 
 import android.annotation.SuppressLint
-import android.util.Log
 import com.andyyeh.examE.BeanTransformer
 import com.andyyeh.examE.di.BasicInfo
 import com.andyyeh.examE.mainActivity.model.UserBean
@@ -14,11 +13,17 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Consumer
 import io.reactivex.schedulers.Schedulers
 
+/**implement contract for the unit test**/
 class MainActivityRepository(basicInfo: BasicInfo) : MainContract.Repository{
 
     private val TAG = MainActivityRepository::class.java.simpleName
     private val mBasicInfo = basicInfo
 
+    /**
+     * @param since the id for request
+     * @param consumer the callback for ViewModel
+     * @see BeanTransformer transform the Online data to the Local
+     * **/
     override fun getDataFromInternet(since: Int, consumer: Consumer<ArrayList<UserBean>>) {
         val onNextListener = object : UserObserverListener.ObserverOnNextListener<List<NetUserBean>>{
             @SuppressLint("CheckResult")

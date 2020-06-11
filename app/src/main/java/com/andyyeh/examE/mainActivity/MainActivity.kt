@@ -40,6 +40,10 @@ class MainActivity : BaseActivity() {
         vUserInfoRV.adapter = mAdapter
     }
 
+    /**
+     * @see RecyclerView.OnScrollListener.onScrolled locate item position
+     * @see RecyclerView.OnScrollListener.onScrollStateChanged detect if touched the Bottom
+     * **/
     private fun detectRecyclerScroll(){
         vUserInfoRV.addOnScrollListener(object : RecyclerView.OnScrollListener(){
             var lastVisibleItem: Int? = 0

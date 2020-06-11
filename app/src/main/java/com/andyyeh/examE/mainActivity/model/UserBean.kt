@@ -1,11 +1,9 @@
 package com.andyyeh.examE.mainActivity.model
 
-import android.widget.ImageView
-import androidx.databinding.BindingAdapter
-import com.bumptech.glide.Glide
-import javax.inject.Inject
-
-
+/**
+ * @param id the "since" id
+ * @param imgUrl the user avatar
+ * **/
 data class UserBean(var id: Int,
                     var imgUrl: String,
                     var userName: String,

@@ -4,12 +4,18 @@ import android.util.Log
 import com.andyyeh.examE.mainActivity.model.UserBean
 import com.example.gituserapi.NetUserBean
 
+/**the bean convert center**/
 class BeanTransformer private constructor(){
 
     companion object {
         val instance = BeanTransformer()
     }
 
+    /**
+     * @param netUserBeans present the online data
+     * @return the Local data
+     * @see UserBean
+     * **/
     fun netUserBean2UserBean(netUserBeans: List<NetUserBean>): ArrayList<UserBean>{
         val userBeans = ArrayList<UserBean>()
         for (netUserBean in netUserBeans){
