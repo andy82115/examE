@@ -1,7 +1,7 @@
 package com.example.andynovelapi.internetApi
 
 import com.example.andyutils.designPatternUtils.SingletonHolder
-import com.example.gituserapi.NetUserBean
+import com.example.gituserapi.beans.NetUserBean
 import io.reactivex.Observable
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers

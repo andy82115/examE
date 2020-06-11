@@ -1,6 +1,6 @@
 package com.example.andynovelapi.internetApi
 
-import com.example.gituserapi.NetUserBean
+import com.example.gituserapi.beans.NetUserBean
 import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Query

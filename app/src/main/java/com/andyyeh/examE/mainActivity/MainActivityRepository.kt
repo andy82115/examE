@@ -7,7 +7,7 @@ import com.andyyeh.examE.mainActivity.model.UserBean
 import com.example.andynovelapi.internetApi.UserApiMethods
 import com.example.andynovelapi.internetApi.UserObserver
 import com.example.andynovelapi.internetApi.UserObserverListener
-import com.example.gituserapi.NetUserBean
+import com.example.gituserapi.beans.NetUserBean
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Consumer

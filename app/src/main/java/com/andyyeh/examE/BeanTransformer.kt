@@ -1,8 +1,7 @@
 package com.andyyeh.examE
 
-import android.util.Log
 import com.andyyeh.examE.mainActivity.model.UserBean
-import com.example.gituserapi.NetUserBean
+import com.example.gituserapi.beans.NetUserBean
 
 /**the bean convert center**/
 class BeanTransformer private constructor(){
