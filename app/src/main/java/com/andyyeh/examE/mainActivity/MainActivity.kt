@@ -21,6 +21,7 @@ class MainActivity : BaseActivity() {
 
         this.setTransition()
         this.setRecyclerView()
+        this.requestData()
     }
 
     private fun setTransition(){
@@ -31,5 +32,9 @@ class MainActivity : BaseActivity() {
     private fun setRecyclerView(){
         vUserInfoRV.layoutManager = LinearLayoutManager(this)
         vUserInfoRV.adapter = mAdapter
+    }
+
+    private fun requestData(){
+        mViewModel.requestUserData()
     }
 }

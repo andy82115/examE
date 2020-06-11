@@ -1,4 +1,4 @@
-package com.andyyeh.examE
+package com.example.climateapi
 
 object Configuration{
     const val DEBUG = true
