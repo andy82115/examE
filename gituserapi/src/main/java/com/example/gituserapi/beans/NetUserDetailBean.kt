@@ -2,7 +2,7 @@ package com.example.gituserapi.beans
 
 data class NetUserDetailBean(
     val avatar_url: String,
-    val bio: Any,
+    val bio: String?,
     val blog: String,
     val company: String,
     val created_at: String,
