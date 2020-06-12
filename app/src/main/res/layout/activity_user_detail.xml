@@ -5,6 +5,8 @@
     tools:context=".userDetailActivity.UserDetailActivity">
 
     <data>
+        <import type="android.view.View"/>
+
         <variable
             name="userDetail"
             type="com.andyyeh.examE.userDetailActivity.UserDetailViewModel" />
@@ -61,6 +63,7 @@
             android:layout_marginBottom="10dp"
             android:layout_gravity="center_horizontal"
             android:text="@{userDetail.details}"
+            android:textAlignment="center"
             android:textSize="15dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -99,8 +102,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:visibility="visible"
-                    android:text="STAFF"
+                    android:visibility="@{userDetail.siteAdmin? View.VISIBLE : View.GONE}"                    android:text="STAFF"
                     android:textColor="@color/white"
                     android:padding="5dp"
                     android:background="@drawable/radius_bg"/>
