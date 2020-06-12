@@ -5,16 +5,14 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
-import android.transition.Slide
-import android.view.Gravity
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewAnimationUtils
 import android.view.animation.AccelerateInterpolator
 import androidx.core.app.ActivityOptionsCompat
 import androidx.databinding.DataBindingUtil
-import com.andyyeh.examE.animateListener.AnimatorListener
 import com.andyyeh.examE.R
+import com.andyyeh.examE.animateListener.AnimatorListener
 import com.andyyeh.examE.databinding.ActivityLaunchBinding
 import com.andyyeh.examE.mainActivity.MainActivity
 import com.andyyeh.examE.mvvmBase.BaseActivity
@@ -32,7 +30,6 @@ class LaunchActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        this.setTransition()
         //Doing data binding
         dataBinding = DataBindingUtil.setContentView(this, R.layout.activity_launch)
         dataBinding.launchActivityViewModel = mViewModel
@@ -41,10 +38,6 @@ class LaunchActivity : BaseActivity() {
         this.startLaunchAnimate()
         this.twinkleInfoText()
         this.containerOnTouched()
-    }
-
-    private fun setTransition(){
-//        window.returnTransition = Slide(Gravity.START).setDuration(250)
     }
 
     private fun containerOnTouched(){
@@ -77,7 +70,6 @@ class LaunchActivity : BaseActivity() {
         }))
         anim.setDuration(1000).interpolator = AccelerateInterpolator()
         anim.start()
-//        this.finish()
     }
 
     private fun startLaunchAnimate() {

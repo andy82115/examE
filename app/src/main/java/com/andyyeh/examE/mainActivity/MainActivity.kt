@@ -2,9 +2,6 @@ package com.andyyeh.examE.mainActivity
 
 import android.content.Intent
 import android.os.Bundle
-import android.transition.Slide
-import android.util.Log
-import android.view.Gravity
 import android.widget.Toast
 import androidx.core.app.ActivityOptionsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -28,14 +25,8 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        this.setTransition()
         this.setRecyclerView()
         this.requestData()
-    }
-
-    private fun setTransition(){
-//        window.enterTransition = Slide(Gravity.END).setDuration(250)
-//        window.returnTransition = Slide(Gravity.START).setDuration(250)
     }
 
     private fun setRecyclerView(){

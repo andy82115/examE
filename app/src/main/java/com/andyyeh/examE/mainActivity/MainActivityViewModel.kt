@@ -1,6 +1,5 @@
 package com.andyyeh.examE.mainActivity
 
-import com.andyyeh.examE.Configuration
 import com.andyyeh.examE.mainActivity.model.UserModel
 import com.andyyeh.examE.mvvmBase.BaseViewModel
 import io.reactivex.Completable
@@ -9,9 +8,6 @@ import io.reactivex.functions.Action
 import io.reactivex.functions.Consumer
 
 class MainActivityViewModel(repository: MainActivityRepository, userModel: UserModel) : BaseViewModel() {
-
-    private val TAG = MainActivityViewModel::class.java.simpleName
-    private val DEBUG = Configuration.DEBUG
 
     private val mRepository = repository
     private val mUserModel = userModel

@@ -16,7 +16,6 @@ import io.reactivex.schedulers.Schedulers
 /**implement contract for the unit test**/
 class MainActivityRepository(basicInfo: BasicInfo) : MainContract.Repository{
 
-    private val TAG = MainActivityRepository::class.java.simpleName
     private val mBasicInfo = basicInfo
 
     /**

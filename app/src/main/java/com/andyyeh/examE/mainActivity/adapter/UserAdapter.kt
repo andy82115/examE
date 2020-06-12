@@ -1,6 +1,5 @@
 package com.andyyeh.examE.mainActivity.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,10 +12,7 @@ import com.andyyeh.examE.databinding.ItemUserInfoBinding
 import com.andyyeh.examE.mainActivity.model.UserBean
 import com.bumptech.glide.Glide
 import io.reactivex.Single
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.functions.Action
 import io.reactivex.functions.Consumer
-import io.reactivex.schedulers.Schedulers
 
 /**Utilize Data binding to do it
  * @see R.layout.item_user_info
