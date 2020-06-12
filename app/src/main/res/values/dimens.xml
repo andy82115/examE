@@ -10,5 +10,5 @@
 
     <dimen name="detail_icon_size">35dp</dimen>
     <dimen name="detail_container_margin_top">30dp</dimen>
-    <dimen name="detail_container_margin_y">15</dimen>
+    <dimen name="detail_container_margin_y">15dp</dimen>
 </resources>
