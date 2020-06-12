@@ -1,15 +1,19 @@
 package com.andyyeh.examE.mainActivity
 
+import android.content.Intent
 import android.os.Bundle
 import android.transition.Slide
 import android.util.Log
 import android.view.Gravity
 import android.widget.Toast
+import androidx.core.app.ActivityOptionsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.andyyeh.examE.Configuration
 import com.andyyeh.examE.R
 import com.andyyeh.examE.mainActivity.adapter.UserAdapter
 import com.andyyeh.examE.mvvmBase.BaseActivity
+import com.andyyeh.examE.userDetailActivity.UserDetailActivity
 import io.reactivex.functions.Action
 import io.reactivex.functions.Consumer
 import kotlinx.android.synthetic.main.activity_main.*
@@ -36,8 +40,21 @@ class MainActivity : BaseActivity() {
 
     private fun setRecyclerView(){
         detectRecyclerScroll()
+        detectItemClicked()
         vUserInfoRV.layoutManager = LinearLayoutManager(this)
         vUserInfoRV.adapter = mAdapter
+    }
+
+    /**
+     * the callback is login id
+     * **/
+    private fun detectItemClicked(){
+        mAdapter.itemClickedObserver = Consumer {
+            val bundle = ActivityOptionsCompat.makeSceneTransitionAnimation(this@MainActivity).toBundle()
+            val intent = Intent(this@MainActivity, UserDetailActivity::class.java)
+            intent.putExtra(Configuration.LOGIN_ID, it)
+            startActivity(intent, bundle)
+        }
     }
 
     /**

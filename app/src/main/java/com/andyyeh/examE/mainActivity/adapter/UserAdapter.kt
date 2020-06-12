@@ -1,5 +1,6 @@
 package com.andyyeh.examE.mainActivity.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +12,11 @@ import com.andyyeh.examE.R
 import com.andyyeh.examE.databinding.ItemUserInfoBinding
 import com.andyyeh.examE.mainActivity.model.UserBean
 import com.bumptech.glide.Glide
+import io.reactivex.Single
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.functions.Action
+import io.reactivex.functions.Consumer
+import io.reactivex.schedulers.Schedulers
 
 /**Utilize Data binding to do it
  * @see R.layout.item_user_info
@@ -19,6 +25,8 @@ import com.bumptech.glide.Glide
 class UserAdapter(datas: ArrayList<UserBean>) : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
 
     private val mData = datas
+
+    var itemClickedObserver: Consumer<String>? = null
 
     inner class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
@@ -43,6 +51,10 @@ class UserAdapter(datas: ArrayList<UserBean>) : RecyclerView.Adapter<RecyclerVie
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val binding: ItemUserInfoBinding? = DataBindingUtil.getBinding(holder.itemView)
         binding!!.userBean = this.mData[position]
+        binding.root.setOnClickListener {
+            if (itemClickedObserver == null) {return@setOnClickListener}
+            Single.just(this.mData[position].userName).subscribe(itemClickedObserver)
+        }
         binding.executePendingBindings()
     }
 }

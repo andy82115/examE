@@ -20,14 +20,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".userDetailActivity.UserDetailActivity">
+
+        </activity>
+        <activity android:name=".mainActivity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".mainActivity.MainActivity">
-
         </activity>
         <activity android:name=".launchActivity.LaunchActivity"></activity>
     </application>
