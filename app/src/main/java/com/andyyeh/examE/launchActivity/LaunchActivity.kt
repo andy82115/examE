@@ -44,7 +44,7 @@ class LaunchActivity : BaseActivity() {
     }
 
     private fun setTransition(){
-        window.returnTransition = Slide(Gravity.START).setDuration(250)
+//        window.returnTransition = Slide(Gravity.START).setDuration(250)
     }
 
     private fun containerOnTouched(){
@@ -70,8 +70,8 @@ class LaunchActivity : BaseActivity() {
                     val bundle = ActivityOptionsCompat.makeSceneTransitionAnimation(this@LaunchActivity).toBundle()
                     val intent = Intent(this@LaunchActivity, MainActivity::class.java)
                     startActivity(intent, bundle)
-                    this@LaunchActivity.finish()
                 },500)
+                vContainerRL.postDelayed({this@LaunchActivity.finish()}, 2000)
             }
 
         }))
