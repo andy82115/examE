@@ -86,7 +86,7 @@
                 android:layout_width="@dimen/detail_icon_size"
                 android:layout_height="@dimen/detail_icon_size"
                 android:layout_gravity="center_vertical"
-                android:src="@mipmap/ic_launcher_round" />
+                android:src="@drawable/ico_user" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -126,7 +126,7 @@
                 android:layout_width="@dimen/detail_icon_size"
                 android:layout_height="@dimen/detail_icon_size"
                 android:layout_gravity="center_vertical"
-                android:src="@mipmap/ic_launcher_round" />
+                android:src="@drawable/ico_location" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -151,7 +151,7 @@
                 android:layout_width="@dimen/detail_icon_size"
                 android:layout_height="@dimen/detail_icon_size"
                 android:layout_gravity="center_vertical"
-                android:src="@mipmap/ic_launcher_round" />
+                android:src="@drawable/ico_link" />
 
             <TextView
                 android:layout_width="wrap_content"
