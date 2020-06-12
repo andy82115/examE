@@ -9,6 +9,7 @@ import com.andyyeh.examE.Configuration
 import com.andyyeh.examE.R
 import com.andyyeh.examE.databinding.ActivityUserDetailBinding
 import com.andyyeh.examE.mvvmBase.BaseActivity
+import kotlinx.android.synthetic.main.activity_user_detail.*
 import javax.inject.Inject
 
 class UserDetailActivity : BaseActivity() {
@@ -25,6 +26,7 @@ class UserDetailActivity : BaseActivity() {
 
         setTransition()
         requestDetailData()
+        onCLickedListener()
     }
 
     private fun setTransition(){
@@ -32,8 +34,23 @@ class UserDetailActivity : BaseActivity() {
         window.returnTransition = Slide(Gravity.START).setDuration(250)
     }
 
+    /**
+     * request data from online, base on loginId
+     * **/
     private fun requestDetailData(){
         val loginId = intent.getStringExtra(Configuration.LOGIN_ID)
-        mViewModel.requestDetailData(loginId)
+        mViewModel.requestDetailData(loginId!!)
+    }
+
+    /**
+     * NOTICE: i did not make it with DataBinding
+     * and the reason is that I thought ViewModel
+     * should be clean enough to do the Unit Test.
+     *
+     * Additionally, the activity will control all
+     * the UI Flow ~
+     * **/
+    private fun onCLickedListener(){
+        vDetailReturnIV.setOnClickListener { this@UserDetailActivity.finishAfterTransition() }
     }
 }

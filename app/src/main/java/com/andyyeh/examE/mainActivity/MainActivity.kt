@@ -34,8 +34,8 @@ class MainActivity : BaseActivity() {
     }
 
     private fun setTransition(){
-        window.enterTransition = Slide(Gravity.END).setDuration(250)
-        window.returnTransition = Slide(Gravity.START).setDuration(250)
+//        window.enterTransition = Slide(Gravity.END).setDuration(250)
+//        window.returnTransition = Slide(Gravity.START).setDuration(250)
     }
 
     private fun setRecyclerView(){

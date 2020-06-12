@@ -16,6 +16,11 @@ class UserDetailRepository (basicInfo: BasicInfo) : UserDetailContract.Repositor
 
     private val mBasicInfo = basicInfo
 
+    /**
+     * @param login the id for request
+     * @param consumer the callback for ViewModel
+     * @see BeanTransformer transform the Online data to the Local
+     * **/
     override fun getUserDetailFromInternet(login: String, consumer: Consumer<UserDetailBean>) {
         val onNextListener = object : UserObserverListener.ObserverOnNextListener<NetUserDetailBean>{
             @SuppressLint("CheckResult")
