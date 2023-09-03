@@ -79,7 +79,7 @@ class MainActivity : BaseActivity() {
     private fun requestData(){
         mViewModel.requestUserData(
             Consumer {
-                mAdapter.notifyItemRangeInserted(it[0], it[1])
+                mAdapter.submitList(it)
             },
             Action {
                 Toast.makeText(this@MainActivity, "size reach 100", Toast.LENGTH_LONG).show()

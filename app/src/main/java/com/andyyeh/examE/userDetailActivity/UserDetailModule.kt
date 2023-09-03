@@ -1,5 +1,7 @@
 package com.andyyeh.examE.userDetailActivity
 
+import android.content.Context
+import androidx.lifecycle.ViewModelProvider
 import com.andyyeh.examE.di.ActivityScoped
 import com.andyyeh.examE.di.BasicInfo
 import dagger.Module
@@ -12,8 +14,8 @@ class UserDetailModule {
         return UserDetailRepository(basicInfo)
     }
 
-    @ActivityScoped
-    @Provides fun userDetailViewModel(repository: UserDetailRepository) : UserDetailViewModel{
-        return UserDetailViewModel(repository)
-    }
+//    @ActivityScoped
+//    @Provides fun userDetailViewModel(repository: UserDetailRepository, context: Context) : UserDetailViewModel{
+//        return UserDetailViewModel(repository)
+//    }
 }
