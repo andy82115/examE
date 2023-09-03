@@ -3,6 +3,7 @@ package com.andyyeh.examE.mainActivity
 import com.andyyeh.examE.di.ActivityScoped
 import com.andyyeh.examE.di.BasicInfo
 import com.andyyeh.examE.mainActivity.adapter.UserAdapter
+import com.andyyeh.examE.mainActivity.adapter.UserDiffCallback
 import com.andyyeh.examE.mainActivity.model.UserModel
 import dagger.Module
 import dagger.Provides
@@ -27,6 +28,6 @@ class MainActivityModule{
 
     @ActivityScoped
     @Provides fun userAdapter(userModel: UserModel): UserAdapter {
-        return UserAdapter(userModel.datas)
+        return UserAdapter(userModel.datas, UserDiffCallback())
     }
 }

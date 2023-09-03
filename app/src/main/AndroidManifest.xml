@@ -19,13 +19,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".userDetailActivity.UserDetailActivity">
+        <activity
+            android:name=".userDetailActivity.UserDetailActivity"
+            android:screenOrientation="fullSensor">
 
         </activity>
-        <activity android:name=".mainActivity.MainActivity">
+        <activity
+            android:name=".mainActivity.MainActivity"
+            android:screenOrientation="fullSensor">
 
         </activity>
-        <activity android:name=".launchActivity.LaunchActivity">
+        <activity
+            android:name=".launchActivity.LaunchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

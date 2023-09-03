@@ -1,5 +1,7 @@
 package com.andyyeh.examE.mvvmBase
 
-abstract class BaseViewModel{
+import androidx.lifecycle.ViewModel
+
+abstract class BaseViewModel: ViewModel() {
 
 }

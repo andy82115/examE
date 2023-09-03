@@ -139,6 +139,7 @@
 
         <!--Cannot set size if utilize TextView DrawableStart-->
         <LinearLayout
+            android:id="@+id/vLinkLL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/detail_container_margin_top"

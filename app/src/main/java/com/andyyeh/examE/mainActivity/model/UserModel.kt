@@ -2,11 +2,7 @@ package com.andyyeh.examE.mainActivity.model
 
 class UserModel {
 
-    var datas = ArrayList<UserBean>()
+    var datas: MutableList<UserBean> = mutableListOf()
 
     init { }
-
-    fun addData(beans: ArrayList<UserBean>){
-        datas.addAll(beans)
-    }
 }
